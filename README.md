@@ -1,2 +1,4 @@
-# leetcode
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+i made a cool script.
+i will make it in tech
+
+***hell yea***
