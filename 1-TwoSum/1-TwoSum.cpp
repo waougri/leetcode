@@ -1,0 +1,21 @@
+// Last updated: 5/20/2026, 11:37:59 PM
+#include <algorithm>
+#include <vector>
+#include <unordered_map>
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        std::unordered_map<int, int> num_map;
+        
+        for (int i = 0; i < nums.size(); ++i) {
+            int complement = target - nums[i];
+            if (num_map.find(complement) != num_map.end()) {
+                return {num_map[complement], i};
+            }
+            num_map[nums[i]] = i;
+        }
+        
+        return {}; // No solution found
+    }
+};
