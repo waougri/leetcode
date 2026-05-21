@@ -1,0 +1,19 @@
+// Last updated: 5/20/2026, 11:37:35 PM
+class Solution {
+public:
+    int maxProfit(std::vector<int>& prices) {
+        if (prices.empty()) {
+            return 0; // No profit can be made with an empty vector
+        }
+
+        int min_price = prices[0];
+        int max_profit = 0;
+
+        for (int i = 1; i < prices.size(); ++i) {
+            min_price = std::min(min_price, prices[i]);
+            max_profit = std::max(max_profit, prices[i] - min_price);
+        }
+
+        return max_profit;
+    }
+};
