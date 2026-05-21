@@ -1,0 +1,25 @@
+// Last updated: 5/20/2026, 11:36:51 PM
+
+class Solution {
+public:
+  vector<int> productExceptSelf(vector<int> &nums) {
+    std::vector<int> answer(nums.size());
+
+    std::vector<int> prefix(nums.size(), 1);
+    std::vector<int> suffix(nums.size(), 1);
+
+    for (int i = 1; i < prefix.size(); ++i) {
+      prefix[i] = prefix[i - 1] * nums[i - 1];
+    }
+
+    for (int i = nums.size() - 2; i >= 0; --i) {
+      suffix[i] = suffix[i + 1] * nums[i + 1];
+    }
+
+    for (int i = 0; i < nums.size(); ++i) {
+      answer[i] = prefix[i] * suffix[i];
+    }
+
+    return answer;
+  }
+};
